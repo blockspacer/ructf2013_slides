@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='ru' lang="ru">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Как опыт CTF помогает мне НЕ заниматься безопасностью в Яндексе</title>
+        <!-- Styles -->
+        
+        <link rel="stylesheet" media="all" href="theme/css/screen.css">
+        <link rel="stylesheet" media="print" href="theme/css/print.css">
+        
+        
+        <!-- /Styles -->
+        <!-- Javascripts -->
+        
+        <script type="text/javascript" src="theme/js/slides.js"></script>
+        
+        
+        <!-- /Javascripts -->
+    </head>
+    <body class = "notes">
+        <div class = "l-wrap">
+            <ol id = "slides">
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h1>Как опыт CTF помогает мне НЕ заниматься безопасностью в Яндексе</h1>
+                <p class="first-letter">Андрей Григорьев</p>
+<p>Python разработчик</p>
+<p class="event">RuCTF 2013, Екатеринбург, 21 апреля</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class=" section">
+                <h1>Что такое Capture the Flag для меня?</h1>
+                
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>CTF — это опыт</h2>
+                <ul>
+<li>Фан от участия в соревновании</li>
+<li>Общение с другими участниками</li>
+<li>Решение хакерских задач</li>
+<li>Знакомство с технологиями</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class=" section">
+                <h1>Что главное при написании безопасных приложений?</h1>
+                
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                
+                <div style='width: 100%; text-align: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%;'>
+<img src="images/bicycles.jpg" style="height: 100%; border-width: 0;" alt="Bicycles in Yandex" />
+</div>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Специфика разработки в Яндексе</h2>
+                <ul>
+<li>Высокие нагрузки</li>
+<li>Требования к отказоустойчивости</li>
+<li>Множество уникальных технологий</li>
+</ul>
+<p>В том числе, с открытым исходным кодом:</p>
+<ul>
+<li>Elliptics, Cocaine, Phantom/Yandex-Tank, BEM-Tools</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                
+                <p class="thesis">Откуда берутся уязвимости на CTF?</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Уязвимости на CTF</h2>
+                <ul>
+<li>Обработка пользовательских параметров</li>
+<li>Логические ошибки, ошибки в реализациях протоколов</li>
+<li>Слабые пароли и ключи в системе и сервисах</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Элементарные правила безопасности</h2>
+                <ul>
+<li>Используйте стандартные средства</li>
+<li>Не используйте малознакомые вам библиотеки</li>
+<li>Читайте документацию</li>
+<li>Не пишите собственноручно то, с чем мало знакомы</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class=" section">
+                <h1>Командная работа</h1>
+                
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Разделение ролей в CTF</h2>
+                <p>Администратор - администрирует</p>
+<p>Специалист по веб - ковыряет веб-сервисы</p>
+<p>Реверсер - реверсит</p>
+<p>Скриптер - пишет скрипты</p>
+<p>Автоматизированные тулзы - ищут уязвимости :-)</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Разделение ролей в Яндексе</h2>
+                <p>Администраторы - следят за серверами и работоспособностью сервисов</p>
+<p>Backend разработчики - ядро системы, управление данными</p>
+<p>Frontend разработчики - клиентская логика, разработка интерфейсов, верстка</p>
+<p>Служба информационной безопасности - ищет уязвимости :-)</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                
+                <p class="thesis">Как это помогает в плане безопасности приложений?</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                
+                <div style='width: 100%; text-align: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%;'>
+<img src="images/owasp.png" style="height: 100%; border-width: 0;" alt="OWASP Top 10" />
+</div>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class=" section">
+                <h1>Как избегать ошибок связанных с безопасностью?</h1>
+                
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Статический анализ</h2>
+                <ul>
+<li>Встроенные в IDE средства</li>
+<li>Опции компиляторов, code-style специфичный для языка</li>
+<li>Специализированные утилиты для поиска уязвимостей</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Code-review</h2>
+                <ul>
+<li>Две головы лучше чем одна</li>
+<li>Необходимо уметь разбираться в чужом коде</li>
+<li>Автобусное число</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Тестирование</h2>
+                <ul>
+<li>Unit-тесты</li>
+<li>Функциональное тестирование</li>
+<li>Тестирование безопасности</li>
+<li>Отладка в production</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class=" section">
+                <h1>Заключение</h1>
+                
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h2>Важно помнить</h2>
+                <ul>
+<li>Не бывает на 100% безопасного кода</li>
+<li>Не нашли уязвимости - значит плохо искали</li>
+<li>Умение писать безопасный код приходит с опытом</li>
+</ul>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                
+                <p class="thesis">Играйте в CTF и приходите в Яндекс!</p>
+              </li>
+              
+              <!-- slide source: slides.md -->
+              <li class="">
+                <h1 class="first-letter">Андрей Григорьев</h1>
+                <p>Python разработчик</p>
+<p>119021, Россия, Москва        <br />
+ул. Льва Толстого, 16</p>
+<p>+7 (495) 739-70-00          <br />
++7 (495) 739-70-70 — факс</p>
+<p><a href="mailto:maximilian@yandex-team.ru">ei-grad@yandex-team.ru</a></p>
+              </li>
+              
+            </ol>
+        </div>
+        <div class = "b-mode-switcher">
+            <a href = "#/preview/slide-01/" title = "Предварительный просмотр">Предварительный просмотр</a> &nbsp;&nbsp;&nbsp;
+            <a href = "#/presentation/slide-01/" title = "Режим презентации">Режим презентации</a>
+        </div>
+    </body>
+</html>

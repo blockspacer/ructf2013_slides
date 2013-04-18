@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='ru' lang="ru">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>{{ head_title }}</title>
+        <!-- Styles -->
+        {% if embed %}
+        <style type="text/css" media="all">
+          {{ css.screen.contents }}
+        </style>
+        <style type="text/css" media="print">
+          {{ css.print.contents }}
+        </style>
+        {% else %}
+        <link rel="stylesheet" media="all" href="{{ css.screen.path_url }}">
+        <link rel="stylesheet" media="print" href="{{ css.print.path_url }}">
+        {% endif %}
+        {% for css in user_css %}
+          {% if embed %}
+          <style type="text/css" media="screen, projection">
+            {{ css.contents }}
+          </style>
+          {% else %}
+          <link rel="stylesheet" href="{{ css.path_url }}">
+          {% endif %}
+        {% endfor %}
+        <!-- /Styles -->
+        <!-- Javascripts -->
+        {% if embed %}
+        <script>
+          {{ js.contents }}
+        </script>
+        {% else %}
+        <script type="text/javascript" src="{{ js.path_url }}"></script>
+        {% endif %}
+        {% for js in user_js %}
+          {% if embed %}
+          <script>
+            {{ js.contents }}
+          </script>
+          {% else %}
+          <script type="text/javascript" src="{{ js.path_url }}"></script>
+          {% endif %}
+        {% endfor %}
+        <!-- /Javascripts -->
+    </head>
+    <body class = "notes">
+        <div class = "l-wrap">
+            <ol id = "slides">
+              {% for slide in slides %}
+              <!-- slide source: {% if slide.source %}{{ slide.source.rel_path }}{% endif %} -->
+              <li class="{% if slide.classes %}{% for class in slide.classes %} {{ class }}{% endfor %}{% endif %}">
+                {% if slide.header %}{{ slide.header }}{% endif %}
+                {% if slide.content %}{{ slide.content }}{% endif %}
+              </li>
+              {% endfor %}
+            </ol>
+        </div>
+        <div class = "b-mode-switcher">
+            <a href = "#/preview/slide-01/" title = "Предварительный просмотр">Предварительный просмотр</a> &nbsp;&nbsp;&nbsp;
+            <a href = "#/presentation/slide-01/" title = "Режим презентации">Режим презентации</a>
+        </div>
+    </body>
+</html>
